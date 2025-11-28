@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>民国人物心理测试</title>
+    <title>民国人物人格测试</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#8B4513',
-                        secondary: '#D2B48C',
-                        accent: '#CD5C5C',
-                        light: '#F5F5DC',
-                        dark: '#2C2C2C'
+                        primary: '#1E3A8A', // 复古蓝主色
+                        secondary: '#93C5FD', // 浅蓝辅助色
+                        accent: '#3B82F6', // 亮蓝强调色
+                        light: '#F8FAFC', // 浅色背景
+                        dark: '#1E293B' // 深色文字
                     },
                     fontFamily: {
                         serif: ['Noto Serif SC', 'serif']
@@ -28,12 +27,11 @@
             }
         }
     </script>
-    
     <style type="text/tailwindcss">
         @layer utilities {
             .bg-texture {
                 background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
-                background-color: #F5F5DC;
+                background-color: #F8FAFC;
             }
             .text-shadow {
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -52,988 +50,929 @@
     </style>
 </head>
 <body class="bg-texture font-serif text-dark min-h-screen">
-    <!-- 页面容器 -->
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
-        
-        <!-- 标题区域 -->
-        <header class="text-center mb-12">
-            <div class="relative inline-block">
-                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold text-primary mb-4 text-shadow">民国人物心理测试</h1>
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-secondary rounded-full"></div>
+<!-- 页面容器 -->
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- 标题区域 -->
+    <header class="text-center mb-12">
+        <div class="relative inline-block">
+            <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold text-primary mb-4 text-shadow">民国人物人格测试</h1>
+            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-secondary rounded-full"></div>
+        </div>
+        <p class="text-lg mt-6 text-gray-700">穿越时空，探寻你内心深处的民国人格</p>
+    </header>
+    <!-- 介绍页面 -->
+    <div id="intro-page" class="block">
+        <div class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary">
+            <p class="text-lg mb-6 leading-relaxed">
+                民国，一个波澜壮阔、思想激荡的时代。在那个新旧交替、东西碰撞的特殊时期，涌现出了无数性格鲜明、影响深远的人物。
+                他们或为理想献身，或为国家奋斗，或在文坛闪耀，或在政坛叱咤。
+            </p>
+            <p class="text-lg mb-8 leading-relaxed">
+                通过以下30个问题，我们将揭示你内心深处的民国人格与哪位民国人物最为相似。请根据你的真实想法和感受选择答案，
+                不要过多思考，直觉往往更准确。
+            </p>
+            <button id="start-test" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
+                开始测试 <<i class="fa fa-arrow-right ml-2"></</i>
+            </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
+                <<i class="fa fa-users text-primary text-2xl mb-2"></</i>
+                <p class="font-semibold">32位民国人物</p>
             </div>
-            <p class="text-lg mt-6 text-gray-700">穿越时空，探寻你内心深处的民国灵魂</p>
-        </header>
-        
-        <!-- 介绍页面 -->
-        <div id="intro-page" class="block">
-            <div class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary">
-                <p class="text-lg mb-6 leading-relaxed">
-                    民国，一个波澜壮阔、思想激荡的时代。在那个新旧交替、东西碰撞的特殊时期，涌现出了无数性格鲜明、影响深远的人物。
-                    他们或为理想献身，或为国家奋斗，或在文坛闪耀，或在政坛叱咤。
-                </p>
-                <p class="text-lg mb-8 leading-relaxed">
-                    通过以下30个问题，我们将揭示你内心深处与哪位民国人物最为相似。请根据你的真实想法和感受选择答案，
-                    不要过多思考，直觉往往更准确。
-                </p>
-                <button id="start-test" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-                    开始测试 <i class="fa fa-arrow-right ml-2"></i>
-                </button>
+            <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
+                <<i class="fa fa-question-circle text-primary text-2xl mb-2"></</i>
+                <p class="font-semibold">30个精选问题</p>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
-                    <i class="fa fa-users text-primary text-2xl mb-2"></i>
-                    <p class="font-semibold">32位民国人物</p>
-                </div>
-                <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
-                    <i class="fa fa-question-circle text-primary text-2xl mb-2"></i>
-                    <p class="font-semibold">30个精选问题</p>
-                </div>
-                <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
-                    <i class="fa fa-book text-primary text-2xl mb-2"></i>
-                    <p class="font-semibold">详细人物解析</p>
-                </div>
-                <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
-                    <i class="fa fa-lightbulb-o text-primary text-2xl mb-2"></i>
-                    <p class="font-semibold">深度性格匹配</p>
-                </div>
+            <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
+                <<i class="fa fa-book text-primary text-2xl mb-2"></</i>
+                <p class="font-semibold">详细人物解析</p>
+            </div>
+            <div class="bg-white/70 p-4 rounded-lg shadow-md text-center card-hover">
+                <<i class="fa fa-lightbulb-o text-primary text-2xl mb-2"></</i>
+                <p class="font-semibold">深度人格匹配</p>
             </div>
         </div>
-        
-        <!-- 测试页面 -->
-        <div id="test-page" class="hidden">
-            <!-- 进度条 -->
-            <div class="bg-white/70 rounded-full h-4 mb-6 overflow-hidden border border-secondary">
-                <div id="progress-bar" class="progress-bar bg-primary h-full w-0"></div>
-            </div>
-            <div class="flex justify-between text-sm text-gray-600 mb-8">
-                <span id="question-counter">问题 1/30</span>
-                <span id="progress-percentage">0%</span>
-            </div>
-            
-            <!-- 问题卡片 -->
-            <div id="question-card" class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary min-h-[250px]">
-                <h2 id="question-text" class="text-xl font-semibold mb-6 text-primary"></h2>
-                <div id="answer-options" class="space-y-3"></div>
-            </div>
-            
-            <!-- 导航按钮 -->
-            <div class="flex justify-between">
-                <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                    <i class="fa fa-arrow-left mr-2"></i> 上一题
-                </button>
-                <button id="next-btn" class="bg-primary hover:bg-primary/90 text-white py-2 px-6 rounded-lg font-semibold transition-all duration-300">
-                    下一题 <i class="fa fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- 结果页面 -->
-        <div id="result-page" class="hidden">
-            <div class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary">
-                <h2 class="text-2xl font-bold mb-4 text-primary text-center">你的民国灵魂是：</h2>
-                
-                <div id="result-card" class="text-center mb-8">
-                    <div class="inline-block bg-primary/10 p-6 rounded-full mb-4">
-                        <i id="result-icon" class="fa fa-user text-5xl text-primary"></i>
-                    </div>
-                    <h3 id="result-name" class="text-3xl font-bold mb-2"></h3>
-                    <p id="result-title" class="text-xl text-gray-600 italic mb-4"></p>
-                </div>
-                
-                <div class="mb-8">
-                    <h4 class="text-lg font-semibold mb-3 text-primary">性格匹配度：</h4>
-                    <div class="bg-gray-200 rounded-full h-4 mb-2">
-                        <div id="match-percentage-bar" class="bg-accent h-full rounded-full"></div>
-                    </div>
-                    <p id="match-percentage-text" class="text-right text-sm text-gray-600"></p>
-                </div>
-                
-                <div class="mb-8">
-                    <h4 class="text-lg font-semibold mb-3 text-primary">人物评价：</h4>
-                    <p id="result-evaluation" class="leading-relaxed"></p>
-                </div>
-                
-                <div class="mb-8">
-                    <h4 class="text-lg font-semibold mb-3 text-primary">人物简介：</h4>
-                    <p id="result-bio" class="leading-relaxed"></p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-3 text-primary">匹配次数：</h4>
-                    <p id="result-count" class="text-center text-lg"></p>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <button id="restart-test" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-                    重新测试 <i class="fa fa-refresh ml-2"></i>
-                </button>
-                
-                <div class="mt-8 p-4 bg-white/50 rounded-lg">
-                    <p class="text-sm text-gray-600">
-                        <i class="fa fa-info-circle mr-2"></i>
-                        本测试仅供娱乐，结果基于心理学特质匹配算法生成
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 页脚 -->
-        <footer class="mt-16 text-center text-gray-600 text-sm">
-            <p>© 2025 民国人物心理测试 | 设计制作：豆包编程助手</p>
-            <p class="mt-2">本测试旨在弘扬民国文化，纪念历史人物</p>
-        </footer>
     </div>
-    
-    <script>
-        // 人物数据
-        const characters = [
-            {
-                id: 1,
-                name: "毛泽东",
-                title: "伟大的无产阶级革命家、战略家、理论家",
-                icon: "fa-user",
-                evaluation: "你具有远大的理想抱负和坚定的信念，善于从全局思考问题，有着非凡的战略眼光和领导才能。性格坚韧不拔，不畏艰难险阻，始终坚持自己的信仰和道路。同时，你也具有深厚的人民情怀，关注底层民众的疾苦。",
-                bio: "毛泽东（1893-1976），湖南湘潭人。中国共产党、中国人民解放军和中华人民共和国的主要缔造者和领导人。他对马克思列宁主义的发展、军事理论的贡献以及对共产党的理论贡献被称为毛泽东思想。",
-                traits: [5,5,4,3,5,4,5,3,5,4,3,5,4,5,3,5,4,3,5,4,3,5,4,5,3,5,4,3,5,4],
-                count: 0
-            },
-            {
-                id: 2,
-                name: "周恩来",
-                title: "人民的好总理",
-                icon: "fa-user-circle",
-                evaluation: "你性格温和而坚定，具有出色的协调能力和外交手腕。为人谦逊有礼，处事周到细致，总是把集体利益放在首位。你善于化解矛盾，维护团结，具有高尚的品格和无私的奉献精神。",
-                bio: "周恩来（1898-1976），江苏淮安人。伟大的无产阶级革命家、政治家、军事家、外交家，中国共产党和中华人民共和国的主要领导人之一，中国人民解放军主要创建人之一。",
-                traits: [4,4,5,5,4,5,3,5,4,5,4,4,5,4,5,4,3,5,4,5,4,4,5,4,5,4,3,5,4,5],
-                count: 0
-            },
-            {
-                id: 3,
-                name: "宋霭龄",
-                title: "民国时期的女实业家",
-                icon: "fa-female",
-                evaluation: "你具有敏锐的商业头脑和强烈的家族观念，务实而精明，善于把握机遇。性格果断，目标明确，重视实际利益和家族地位。你在人际关系中游刃有余，善于利用各种资源达到自己的目的。",
-                bio: "宋霭龄（1889-1973），广东文昌人。宋氏家族长女，孔祥熙之妻。她精明能干，善于理财，是民国时期最富有的女性之一，对宋氏家族的崛起起到了重要作用。",
-                traits: [3,5,4,4,2,3,4,2,3,5,2,3,5,2,4,3,5,2,3,5,2,3,5,2,4,3,5,2,3,5],
-                count: 0
-            },
-            {
-                id: 4,
-                name: "宋庆龄",
-                title: "国母、爱国主义、民主主义、国际主义和共产主义战士",
-                icon: "fa-heart",
-                evaluation: "你具有崇高的理想和坚定的信仰，为人正直无私，追求真理和正义。性格温和而坚定，既有女性的柔美，又有革命者的刚毅。你始终站在人民的立场上，为国家和民族的利益不懈奋斗。",
-                bio: "宋庆龄（1893-1981），广东文昌人。孙中山夫人，伟大的爱国主义、民主主义、国际主义和共产主义战士。她为中国人民的解放事业，为妇女儿童的卫生保健和文化教育福利事业做出了不可磨灭的贡献。",
-                traits: [5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3],
-                count: 0
-            },
-            {
-                id: 5,
-                name: "宋美龄",
-                title: "蒋介石夫人、杰出的外交家",
-                icon: "fa-star",
-                evaluation: "你优雅而聪慧，具有出色的社交能力和外交天赋。性格坚韧，善于应对复杂局面，有着强烈的自尊心和荣誉感。你注重形象和礼仪，同时也具备政治头脑和决策能力。",
-                bio: "宋美龄（1897-2003），广东文昌人。蒋介石夫人，杰出的政治家、外交家。她精通六国语言，在抗日战争时期的外交活动中发挥了重要作用，是中国近代史上极具影响力的女性。",
-                traits: [4,4,4,5,3,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4],
-                count: 0
-            },
-            {
-                id: 6,
-                name: "孙中山",
-                title: "中国民主革命的伟大先行者",
-                icon: "fa-flag",
-                evaluation: "你具有远大的理想和开阔的视野，是天生的领导者和革命者。性格乐观坚定，百折不挠，始终为理想而奋斗。你善于提出新思想、新理念，具有感召力和影响力。",
-                bio: "孙中山（1866-1925），广东香山人。中国近代民主革命的伟大先行者，中华民国和中国国民党的缔造者，三民主义的倡导者。他领导辛亥革命推翻了封建帝制，建立了中华民国。",
-                traits: [5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4],
-                count: 0
-            },
-            {
-                id: 7,
-                name: "蒋介石",
-                title: "中国国民党总裁、中华民国总统",
-                icon: "fa-building",
-                evaluation: "你具有强烈的权力欲和控制欲，性格果断坚决，注重纪律和秩序。你善于权谋和策略，有着坚定的目标和执行力。但有时过于固执己见，缺乏灵活性和包容性。",
-                bio: "蒋介石（1887-1975），浙江奉化人。中国国民党当政时期的党、政、军主要领导人。他领导北伐战争统一了中国，抗日战争时期担任中国战区最高统帅，后在内战中失败退居台湾。",
-                traits: [4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3],
-                count: 0
-            },
-            {
-                id: 8,
-                name: "袁世凯",
-                title: "北洋军阀领袖、中华民国大总统",
-                icon: "fa-balance-scale",
-                evaluation: "你具有强烈的政治野心和务实精神，善于把握时机，灵活变通。性格复杂多面，既有改革的一面，又有保守的一面。你注重实际利益，有时为达目的不择手段。",
-                bio: "袁世凯（1859-1916），河南项城人。中国近代史上著名的政治、军事人物，北洋军阀领袖。他曾任中华民国大总统，后复辟帝制，建立中华帝国，引发护国战争，不久后病逝。",
-                traits: [3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2],
-                count: 0
-            },
-            {
-                id: 9,
-                name: "李大钊",
-                title: "中国共产主义运动的先驱",
-                icon: "fa-bookmark",
-                evaluation: "你具有坚定的信仰和无私的奉献精神，是理想主义的践行者。性格热情而执着，勇于探索真理，敢于为理想献身。你具有强烈的社会责任感和历史使命感。",
-                bio: "李大钊（1889-1927），河北乐亭人。中国共产主义运动的先驱，伟大的马克思主义者，杰出的无产阶级革命家，中国共产党的主要创始人之一。他为中国革命作出了巨大贡献，最终英勇就义。",
-                traits: [5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5],
-                count: 0
-            },
-            {
-                id: 10,
-                name: "陈独秀",
-                title: "新文化运动倡导者、中国共产党创始人之一",
-                icon: "fa-pencil",
-                evaluation: "你思想激进，勇于创新，是新文化的倡导者和推动者。性格直率而固执，敢于挑战传统，追求思想解放。你具有强烈的批判精神，但有时缺乏妥协和合作的精神。",
-                bio: "陈独秀（1879-1942），安徽怀宁人。新文化运动的倡导者之一，中国共产党的创始人和早期主要领导人之一。他创办《新青年》杂志，提倡民主与科学，对中国近代思想解放产生了深远影响。",
-                traits: [4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4],
-                count: 0
-            },
-            {
-                id: 11,
-                name: "林徽因",
-                title: "中国著名建筑师、诗人",
-                icon: "fa-paint-brush",
-                evaluation: "你才华横溢，兼具理性与感性，既有艺术家的浪漫，又有科学家的严谨。性格优雅而独立，对美有着敏锐的感知力，同时对事业充满热情和执着。你善于在不同领域展现自己的才华。",
-                bio: "林徽因（1904-1955），福建闽侯人。中国著名建筑师、诗人、作家。她参与了国徽和人民英雄纪念碑的设计，是中国第一位女性建筑学家，同时在文学创作上也有很高成就。",
-                traits: [2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5],
-                count: 0
-            },
-            {
-                id: 12,
-                name: "徐志摩",
-                title: "新月派代表诗人",
-                icon: "fa-paper-plane",
-                evaluation: "你浪漫多情，富有想象力和创造力，追求自由和真爱。性格热情奔放，情感丰富，善于用诗意的眼光看待世界。你对美和爱有着执着的追求，敢于表达自己的情感。",
-                bio: "徐志摩（1897-1931），浙江海宁人。现代诗人、散文家，新月派代表诗人。他的诗歌风格清新飘逸，富有浪漫主义色彩，对中国新诗的发展做出了重要贡献。",
-                traits: [1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5],
-                count: 0
-            },
-            {
-                id: 13,
-                name: "梁启超",
-                title: "近代著名思想家、政治家、教育家",
-                icon: "fa-graduation-cap",
-                evaluation: "你博学多才，思想开明，具有强烈的社会责任感。性格温和而坚定，善于学习和适应变化，既有传统的底蕴，又有现代的视野。你注重教育和启蒙，希望通过思想改变社会。",
-                bio: "梁启超（1873-1929），广东新会人。中国近代著名的思想家、政治家、教育家、史学家、文学家。戊戌变法（百日维新）领袖之一，中国近代维新派、新法家代表人物。",
-                traits: [4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],
-                count: 0
-            },
-            {
-                id: 14,
-                name: "鲁迅",
-                title: "中国现代文学的奠基人",
-                icon: "fa-book",
-                evaluation: "你具有敏锐的洞察力和强烈的批判精神，敢于直面现实的黑暗。性格冷峻而深刻，善于用文字揭露社会的弊病，唤醒民众的觉悟。你有着强烈的正义感和社会责任感。",
-                bio: "鲁迅（1881-1936），浙江绍兴人。原名周树人，中国现代文学的奠基人，著名文学家、思想家、革命家。他的作品深刻揭示了中国社会的问题，对中国现代文学和思想产生了深远影响。",
-                traits: [5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3],
-                count: 0
-            },
-            {
-                id: 15,
-                name: "胡适",
-                title: "新文化运动领袖之一、学者",
-                icon: "fa-globe",
-                evaluation: "你思想开明，崇尚自由和民主，具有学者的理性和包容。性格温和而坚定，注重实证和逻辑，善于吸收外来文化，同时保持独立思考。你相信渐进的改良，反对激进的变革。",
-                bio: "胡适（1891-1962），安徽绩溪人。现代著名学者、诗人、历史学家、文学家、哲学家。新文化运动的领袖之一，提倡白话文，主张全盘西化，对中国现代学术和思想产生了重要影响。",
-                traits: [3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4],
-                count: 0
-            },
-            {
-                id: 16,
-                name: "蔡元培",
-                title: "近代著名教育家、北大校长",
-                icon: "fa-university",
-                evaluation: "你具有开阔的胸襟和包容的精神，是天生的教育家和领导者。性格温和而坚定，崇尚学术自由和思想解放，善于团结各方人才，创造和谐的环境。你注重培养人才，推动教育进步。",
-                bio: "蔡元培（1868-1940），浙江绍兴人。近代著名教育家、革命家、政治家。曾任北京大学校长，革新北大，开“学术”与“自由”之风，对中国现代教育制度的建立作出了重要贡献。",
-                traits: [3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5],
-                count: 0
-            },
-            {
-                id: 17,
-                name: "秋瑾",
-                title: "近代民主革命志士",
-                icon: "fa-fire",
-                evaluation: "你具有强烈的爱国情怀和革命精神，性格刚烈而勇敢，敢于为理想献身。你反对封建礼教，追求男女平等，是女性解放的先驱。你有着不屈不挠的意志和视死如归的勇气。",
-                bio: "秋瑾（1875-1907），浙江绍兴人。近代民主革命志士，中国女权和女学思想的倡导者。她积极投身反清革命，组织光复军起义，失败后英勇就义，是辛亥革命时期重要的革命烈士。",
-                traits: [5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2],
-                count: 0
-            },
-            {
-                id: 18,
-                name: "邓小平",
-                title: "中国改革开放的总设计师",
-                icon: "fa-cogs",
-                evaluation: "你具有务实的精神和改革的勇气，性格坚韧而果断，善于把握时机，推动变革。你注重实际效果，反对空谈理论，有着“不管黑猫白猫，抓住老鼠就是好猫”的实用主义哲学。",
-                bio: "邓小平（1904-1997），四川广安人。中国社会主义改革开放和现代化建设的总设计师，邓小平理论的主要创立者。他推动了中国的改革开放，使中国发生了翻天覆地的变化。",
-                traits: [4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5],
-                count: 0
-            },
-            {
-                id: 19,
-                name: "汪精卫",
-                title: "中国国民党副总裁、汉奸",
-                icon: "fa-ban",
-                evaluation: "你具有复杂的性格，早期充满理想和热情，但在关键时刻容易动摇和妥协。你善于言辞和表达，但缺乏坚定的立场和原则。在压力和诱惑面前，你可能会做出错误的选择。",
-                bio: "汪精卫（1883-1944），广东三水人。早年参加革命，是孙中山的追随者，后成为中国国民党副总裁。抗日战争期间投靠日本，成立伪国民政府，沦为汉奸，备受后人唾弃。",
-                traits: [2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3],
-                count: 0
-            },
-            {
-                id: 20,
-                name: "刘少奇",
-                title: "伟大的马克思主义者、无产阶级革命家",
-                icon: "fa-users",
-                evaluation: "你具有严谨的思维和务实的作风，注重理论与实践的结合。性格沉稳而坚定，善于思考和总结经验，有着强烈的责任感和使命感。你关心群众利益，坚持实事求是。",
-                bio: "刘少奇（1898-1969），湖南宁乡人。伟大的马克思主义者，伟大的无产阶级革命家、政治家、理论家，党和国家主要领导人之一。他为中国革命和建设作出了重要贡献。",
-                traits: [4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4],
-                count: 0
-            },
-            {
-                id: 21,
-                name: "朱德",
-                title: "中国人民解放军总司令",
-                icon: "fa-shield",
-                evaluation: "你具有宽厚的胸怀和坚定的意志，性格温和而刚毅，是天生的军事家和领导者。你善于团结同志，有着卓越的军事才能和战略眼光，同时保持着朴素的作风。",
-                bio: "朱德（1886-1976），四川仪陇人。伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家，中国人民解放军的主要缔造者之一，中华人民共和国的开国元勋。",
-                traits: [5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4],
-                count: 0
-            },
-            {
-                id: 22,
-                name: "张作霖",
-                title: "北洋军阀奉系首领",
-                icon: "fa-star-o",
-                evaluation: "你具有草莽英雄的气质，性格豪爽而果断，善于把握机遇，从底层崛起。你注重实际利益，有着强烈的地方观念和家族观念。在复杂的政治环境中，你能够灵活应变，保护自己的利益。",
-                bio: "张作霖（1875-1928），辽宁海城人。北洋军阀奉系首领，号称“东北王”。他从土匪起家，逐步控制东北地区，成为北洋政府最后一位国家元首，后被日本关东军炸死。",
-                traits: [3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2],
-                count: 0
-            },
-            {
-                id: 23,
-                name: "沈从文",
-                title: "现代著名作家、历史文物研究家",
-                icon: "fa-tree",
-                evaluation: "你具有独特的审美眼光和乡土情怀，性格温和而内敛，善于用细腻的笔触描绘生活。你热爱自然和乡土，对人性有着深刻的理解和同情。你追求纯粹的艺术，保持着独立的人格。",
-                bio: "沈从文（1902-1988），湖南凤凰人。现代著名作家、历史文物研究家。他的作品充满了乡土气息和人性关怀，代表作《边城》展现了湘西的自然风光和淳朴的人性美。",
-                traits: [2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5],
-                count: 0
-            },
-            {
-                id: 24,
-                name: "钱钟书",
-                title: "现代著名作家、文学研究家",
-                icon: "fa-book",
-                evaluation: "你博学多才，聪慧过人，具有敏锐的洞察力和幽默感。性格孤傲而清高，不屑于世俗的名利，专注于学术研究和文学创作。你善于用智慧和学识表达对人生的思考。",
-                bio: "钱钟书（1910-1998），江苏无锡人。现代著名作家、文学研究家。他的著作《围城》是中国现代文学的经典之作，学术著作《管锥编》展现了他渊博的学识。",
-                traits: [1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4],
-                count: 0
-            },
-            {
-                id: 25,
-                name: "陶行知",
-                title: "近代著名教育家",
-                icon: "fa-pencil-square-o",
-                evaluation: "你具有崇高的教育理想和奉献精神，性格朴实而坚定，注重实践和创新。你相信教育可以改变社会，致力于普及教育，让更多的人获得知识和改变命运的机会。",
-                bio: "陶行知（1891-1946），安徽歙县人。近代著名教育家、思想家。他提出了“生活即教育”、“社会即学校”、“教学做合一”等教育理念，致力于平民教育和乡村教育。",
-                traits: [3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5],
-                count: 0
-            },
-            {
-                id: 26,
-                name: "陈延年",
-                title: "无产阶级革命家",
-                icon: "fa-heartbeat",
-                evaluation: "你具有坚定的革命信仰和不屈的意志，性格刚毅而勇敢，为了理想不惜牺牲一切。你年轻有为，充满激情和活力，敢于斗争，不怕牺牲，是革命的中坚力量。",
-                bio: "陈延年（1898-1927），安徽怀宁人。陈独秀长子，杰出的无产阶级革命家，曾任中共江苏省委书记。他在革命斗争中表现出坚定的信念和英勇的气概，最终英勇就义。",
-                traits: [5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3],
-                count: 0
-            },
-            {
-                id: 27,
-                name: "林觉民",
-                title: "黄花岗七十二烈士之一",
-                icon: "fa-key",
-                evaluation: "你具有浪漫的理想主义和英勇的牺牲精神，性格热情而执着，为了国家和民族的利益不惜献出生命。你既有文人的柔情，又有革命者的刚毅，是铁骨柔情的典范。",
-                bio: "林觉民（1887-1911），福建闽侯人。黄花岗七十二烈士之一，参加广州起义，失败后被俘牺牲。他的《与妻书》感人至深，展现了革命者的家国情怀和儿女情长。",
-                traits: [5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4],
-                count: 0
-            },
-            {
-                id: 28,
-                name: "张爱玲",
-                title: "现代著名女作家",
-                icon: "fa-diamond",
-                evaluation: "你具有敏锐的观察力和独特的文学才华，性格孤傲而敏感，善于洞察人性的复杂和世态的炎凉。你对生活有着独特的理解，用细腻的笔触描绘都市男女的情感世界。",
-                bio: "张爱玲（1920-1995），上海人。现代著名女作家，她的作品风格独特，善于描绘都市生活和人性的复杂，代表作有《金锁记》、《倾城之恋》等。",
-                traits: [2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4],
-                count: 0
-            },
-            {
-                id: 29,
-                name: "邓颖超",
-                title: "无产阶级革命家、妇女运动先驱",
-                icon: "fa-female",
-                evaluation: "你具有坚定的革命信念和无私的奉献精神，性格温和而坚定，是妇女解放运动的先驱。你注重实际工作，关心群众利益，有着高尚的品格和宽广的胸怀。",
-                bio: "邓颖超（1904-1992），河南光山人。周恩来夫人，伟大的无产阶级革命家、政治家，著名社会活动家，中国妇女运动的先驱。她为中国革命和建设事业作出了重要贡献。",
-                traits: [4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5],
-                count: 0
-            },
-            {
-                id: 30,
-                name: "梁思成",
-                title: "中国著名建筑学家",
-                icon: "fa-building-o",
-                evaluation: "你具有严谨的科学精神和深厚的文化底蕴，性格稳重而执着，对专业有着极高的追求。你注重保护文化遗产，致力于将传统与现代相结合，推动学科的发展。",
-                bio: "梁思成（1901-1972），广东新会人。梁启超长子，中国著名建筑学家，建筑教育家。他是中国近代建筑教育的奠基人之一，致力于古建筑的保护和研究。",
-                traits: [3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4],
-                count: 0
-            },
-            {
-                id: 31,
-                name: "杨绛",
-                title: "著名作家、翻译家",
-                icon: "fa-book",
-                evaluation: "你具有优雅的气质和深厚的学识，性格温婉而坚韧，在逆境中保持着乐观和从容。你注重精神生活，追求内心的平静和充实，用智慧和才华书写人生。",
-                bio: "杨绛（1911-2016），江苏无锡人。钱钟书夫人，著名作家、文学翻译家和外国文学研究家。她的作品朴实真挚，充满智慧和温情，代表作有《我们仨》、《洗澡》等。",
-                traits: [2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5],
-                count: 0
-            },
-            {
-                id: 32,
-                name: "冰心",
-                title: "著名作家、诗人",
-                icon: "fa-snowflake-o",
-                evaluation: "你具有温柔的性格和博爱的精神，善于用细腻的笔触表达对母爱、童真和自然的赞美。你相信爱的力量，用文学作品传递温暖和希望，影响了一代又一代的读者。",
-                bio: "冰心（1900-1999），福建长乐人。原名谢婉莹，现代著名作家、诗人、翻译家、儿童文学家。她的作品充满了爱与美，代表作有《繁星》、《春水》、《寄小读者》等。",
-                traits: [1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5],
-                count: 0
-            }
-        ];
-        
-        // 问题数据（选项简化版）
-        const questions = [
-            {
-                id: 1,
-                text: "面对困境，你更倾向于：",
-                options: [
-                    { text: "坚持到底，绝不放弃", value: 5 },
-                    { text: "换个思路，找新办法", value: 4 },
-                    { text: "慢慢来，稳一点好", value: 3 },
-                    { text: "顺其自然，船到桥头自然直", value: 2 },
-                    { text: "找人帮忙，一起解决", value: 1 }
-                ]
-            },
-            {
-                id: 2,
-                text: "你的人生追求更接近：",
-                options: [
-                    { text: "干一番大事业，改变世界", value: 5 },
-                    { text: "做出成绩，让别人记住", value: 4 },
-                    { text: "多学点东西，充实自己", value: 3 },
-                    { text: "做自己喜欢的事，表达想法", value: 2 },
-                    { text: "平平安安过日子就好", value: 1 }
-                ]
-            },
-            {
-                id: 3,
-                text: "在团队中，你通常是：",
-                options: [
-                    { text: "带头的人，决定方向", value: 5 },
-                    { text: "做事的人，落实计划", value: 4 },
-                    { text: "出主意的人，提供想法", value: 3 },
-                    { text: "调和的人，让大家和睦", value: 2 },
-                    { text: "默默做事的人，尽力就好", value: 1 }
-                ]
-            },
-            {
-                id: 4,
-                text: "对于老规矩和新做法，你觉得：",
-                options: [
-                    { text: "旧的该换，新的更好", value: 5 },
-                    { text: "好的留下，不好的改掉", value: 4 },
-                    { text: "尊重传统，适当创新", value: 3 },
-                    { text: "还是老的靠谱，慢慢来", value: 2 },
-                    { text: "老规矩不能变", value: 1 }
-                ]
-            },
-            {
-                id: 5,
-                text: "你做决定时更：",
-                options: [
-                    { text: "凭感觉，快速决定", value: 5 },
-                    { text: "想清楚，权衡利弊", value: 4 },
-                    { text: "看经验，按惯例来", value: 3 },
-                    { text: "问别人，听听意见", value: 2 },
-                    { text: "想很久，怕出错", value: 1 }
-                ]
-            },
-            {
-                id: 6,
-                text: "对爱情，你的态度是：",
-                options: [
-                    { text: "爱就大胆去追，不管后果", value: 5 },
-                    { text: "真心对待，珍惜眼前人", value: 4 },
-                    { text: "考虑清楚，找合适的人", value: 3 },
-                    { text: "随缘就好，不强求", value: 2 },
-                    { text: "先忙事业，爱情随缘", value: 1 }
-                ]
-            },
-            {
-                id: 7,
-                text: "面对权威人士，你会：",
-                options: [
-                    { text: "不对就说，坚持真理", value: 5 },
-                    { text: "尊重但不盲从，有自己想法", value: 4 },
-                    { text: "有意见也委婉说", value: 3 },
-                    { text: "表面答应，心里有数", value: 2 },
-                    { text: "听话照做，不惹麻烦", value: 1 }
-                ]
-            },
-            {
-                id: 8,
-                text: "你的性格更像：",
-                options: [
-                    { text: "外向开朗，喜欢交朋友", value: 5 },
-                    { text: "积极主动，精力充沛", value: 4 },
-                    { text: "沉着冷静，想得周到", value: 3 },
-                    { text: "温和友善，乐于助人", value: 2 },
-                    { text: "喜欢独处，自己待着", value: 1 }
-                ]
-            },
-            {
-                id: 9,
-                text: "失败了，你会：",
-                options: [
-                    { text: "总结教训，重新再来", value: 5 },
-                    { text: "找找原因，换个方法", value: 4 },
-                    { text: "先歇歇，恢复一下信心", value: 3 },
-                    { text: "找人聊聊，寻求支持", value: 2 },
-                    { text: "反思自己，吸取教训", value: 1 }
-                ]
-            },
-            {
-                id: 10,
-                text: "你最看重的是：",
-                options: [
-                    { text: "国家社会，尽一份责任", value: 5 },
-                    { text: "理想信念，追求目标", value: 4 },
-                    { text: "家庭亲人，人际关系", value: 3 },
-                    { text: "个人成长，提升自己", value: 2 },
-                    { text: "生活舒服，过得开心", value: 1 }
-                ]
-            },
-            {
-                id: 11,
-                text: "学习工作中，你更在意：",
-                options: [
-                    { text: "创新突破，做不一样的", value: 5 },
-                    { text: "效率第一，尽快完成", value: 4 },
-                    { text: "质量要好，做到最好", value: 3 },
-                    { text: "大家合作，和睦相处", value: 2 },
-                    { text: "按部就班，不出错就行", value: 1 }
-                ]
-            },
-            {
-                id: 12,
-                text: "对于外国文化和本土文化：",
-                options: [
-                    { text: "外国的更好，多学学", value: 5 },
-                    { text: "各有好坏，互相学习", value: 4 },
-                    { text: "本土为主，借鉴外国", value: 3 },
-                    { text: "慢慢接受，不着急", value: 2 },
-                    { text: "还是自己的好，不学外国", value: 1 }
-                ]
-            },
-            {
-                id: 13,
-                text: "你说话更倾向于：",
-                options: [
-                    { text: "直来直去，一针见血", value: 5 },
-                    { text: "条理清晰，讲道理", value: 4 },
-                    { text: "委婉含蓄，留面子", value: 3 },
-                    { text: "生动有趣，吸引人", value: 2 },
-                    { text: "简单明了，点到为止", value: 1 }
-                ]
-            },
-            {
-                id: 14,
-                text: "你喜欢的生活是：",
-                options: [
-                    { text: "充满挑战，丰富多彩", value: 5 },
-                    { text: "积极向上，不断进步", value: 4 },
-                    { text: "安稳舒适，有规律", value: 3 },
-                    { text: "温馨和谐，有人情味", value: 2 },
-                    { text: "简单平淡，回归自然", value: 1 }
-                ]
-            },
-            {
-                id: 15,
-                text: "对社会事务，你会：",
-                options: [
-                    { text: "主动参与，挺身而出", value: 5 },
-                    { text: "尽力而为，能帮就帮", value: 4 },
-                    { text: "做好本职，顺便帮忙", value: 3 },
-                    { text: "关注一下，偶尔参与", value: 2 },
-                    { text: "管好自己，不管别的", value: 1 }
-                ]
-            },
-            {
-                id: 16,
-                text: "你思考问题更：",
-                options: [
-                    { text: "看大局，抓重点", value: 5 },
-                    { text: "讲逻辑，理性分析", value: 4 },
-                    { text: "看细节，注重实际", value: 3 },
-                    { text: "凭感觉，直觉判断", value: 2 },
-                    { text: "综合考虑，全面分析", value: 1 }
-                ]
-            },
-            {
-                id: 17,
-                text: "遇到变化，你会：",
-                options: [
-                    { text: "主动推动，带头改变", value: 5 },
-                    { text: "拥抱变化，适应新情况", value: 4 },
-                    { text: "看看再说，时机到了再动", value: 3 },
-                    { text: "被动接受，慢慢调整", value: 2 },
-                    { text: "保持原样，不想变", value: 1 }
-                ]
-            },
-            {
-                id: 18,
-                text: "你交朋友更：",
-                options: [
-                    { text: "朋友多，人脉广", value: 5 },
-                    { text: "真心待人，重情义", value: 4 },
-                    { text: "选朋友，宁缺毋滥", value: 3 },
-                    { text: "对人友善，乐于助人", value: 2 },
-                    { text: "保持距离，尊重隐私", value: 1 }
-                ]
-            },
-            {
-                id: 19,
-                text: "理想和现实冲突时，你会：",
-                options: [
-                    { text: "为理想拼了，不管现实", value: 5 },
-                    { text: "坚持理想，也顾现实", value: 4 },
-                    { text: "先顾现实，再追理想", value: 3 },
-                    { text: "接受现实，适当妥协", value: 2 },
-                    { text: "面对现实，放弃理想", value: 1 }
-                ]
-            },
-            {
-                id: 20,
-                text: "你安排时间更：",
-                options: [
-                    { text: "目标导向，充分利用", value: 5 },
-                    { text: "计划周密，按计划来", value: 4 },
-                    { text: "灵活安排，随机应变", value: 3 },
-                    { text: "随性而为，享受过程", value: 2 },
-                    { text: "慢慢来，不慌不忙", value: 1 }
-                ]
-            },
-            {
-                id: 21,
-                text: "别人批评你，你会：",
-                options: [
-                    { text: "坦然接受，努力改进", value: 5 },
-                    { text: "理性看待，好的就听", value: 4 },
-                    { text: "冷静想想，反思自己", value: 3 },
-                    { text: "有点委屈，解释一下", value: 2 },
-                    { text: "难以接受，反驳回去", value: 1 }
-                ]
-            },
-            {
-                id: 22,
-                text: "你的兴趣爱好更偏向：",
-                options: [
-                    { text: "国家大事，社会热点", value: 5 },
-                    { text: "科技创新，新鲜事物", value: 4 },
-                    { text: "文学艺术，审美欣赏", value: 3 },
-                    { text: "户外运动，锻炼身体", value: 2 },
-                    { text: "家庭生活，做饭手工", value: 1 }
-                ]
-            },
-            {
-                id: 23,
-                text: "压力大时，你会：",
-                options: [
-                    { text: "越挫越勇，发挥更好", value: 5 },
-                    { text: "沉着冷静，应对自如", value: 4 },
-                    { text: "有点紧张，努力克服", value: 3 },
-                    { text: "需要支持，找人分担", value: 2 },
-                    { text: "压力太大，影响发挥", value: 1 }
-                ]
-            },
-            {
-                id: 24,
-                text: "你当领导会：",
-                options: [
-                    { text: "果断决策，说了算", value: 5 },
-                    { text: "大家商量，一起决定", value: 4 },
-                    { text: "以身作则，带头做事", value: 3 },
-                    { text: "温和包容，团结大家", value: 2 },
-                    { text: "信任下属，放手让做", value: 1 }
-                ]
-            },
-            {
-                id: 25,
-                text: "对生死，你的看法是：",
-                options: [
-                    { text: "重于泰山，死得有价值", value: 5 },
-                    { text: "珍惜生命，活得有意义", value: 4 },
-                    { text: "顺其自然，生死由命", value: 3 },
-                    { text: "敬畏生命，活在当下", value: 2 },
-                    { text: "怕死，好好活着", value: 1 }
-                ]
-            },
-            {
-                id: 26,
-                text: "你学习更：",
-                options: [
-                    { text: "博览群书，什么都学", value: 5 },
-                    { text: "深入钻研，学精一门", value: 4 },
-                    { text: "学以致用，注重实践", value: 3 },
-                    { text: "兴趣驱动，喜欢就学", value: 2 },
-                    { text: "循序渐进，打好基础", value: 1 }
-                ]
-            },
-            {
-                id: 27,
-                text: "对钱和权，你觉得：",
-                options: [
-                    { text: "追求权力，实现抱负", value: 5 },
-                    { text: "赚钱行善，回馈社会", value: 4 },
-                    { text: "够用就好，平衡生活", value: 3 },
-                    { text: "看淡名利，追求自由", value: 2 },
-                    { text: "知足常乐，精神富足", value: 1 }
-                ]
-            },
-            {
-                id: 28,
-                text: "解决问题你会：",
-                options: [
-                    { text: "大胆尝试，试试新方法", value: 5 },
-                    { text: "分析根源，彻底解决", value: 4 },
-                    { text: "借鉴经验，稳妥处理", value: 3 },
-                    { text: "找人合作，一起解决", value: 2 },
-                    { text: "耐心等待，时机成熟", value: 1 }
-                ]
-            },
-            {
-                id: 29,
-                text: "对传统文化，你会：",
-                options: [
-                    { text: "批判继承，推陈出新", value: 5 },
-                    { text: "保护传承，发扬光大", value: 4 },
-                    { text: "学习研究，理解精髓", value: 3 },
-                    { text: "欣赏体验，偶尔参与", value: 2 },
-                    { text: "顺其自然，不用刻意", value: 1 }
-                ]
-            },
-            {
-                id: 30,
-                text: "你的人生态度更接近：",
-                options: [
-                    { text: "知行合一，实践出真知", value: 5 },
-                    { text: "中庸之道，平衡就好", value: 4 },
-                    { text: "实事求是，尊重规律", value: 3 },
-                    { text: "顺其自然，无为而治", value: 2 },
-                    { text: "活在当下，珍惜现在", value: 1 }
-                ]
-            }
-        ];
-        
-        // 全局变量
-        let currentQuestion = 0;
-        let answers = [];
-        let resultCharacter = null;
-        let maxScore = 0;
-        
-        // DOM元素
-        const introPage = document.getElementById('intro-page');
-        const testPage = document.getElementById('test-page');
-        const resultPage = document.getElementById('result-page');
-        const startTestBtn = document.getElementById('start-test');
-        const restartTestBtn = document.getElementById('restart-test');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const questionText = document.getElementById('question-text');
-        const answerOptions = document.getElementById('answer-options');
-        const questionCounter = document.getElementById('question-counter');
-        const progressPercentage = document.getElementById('progress-percentage');
-        const progressBar = document.getElementById('progress-bar');
-        
-        // 初始化
-        function init() {
-            // 加载本地存储的人物计数
-            const savedCounts = localStorage.getItem('characterCounts');
-            if (savedCounts) {
-                const counts = JSON.parse(savedCounts);
-                characters.forEach(char => {
-                    if (counts[char.id]) {
-                        char.count = counts[char.id];
-                    }
-                });
-            }
-            
-            // 绑定事件
-            startTestBtn.addEventListener('click', startTest);
-            restartTestBtn.addEventListener('click', restartTest);
-            prevBtn.addEventListener('click', showPrevQuestion);
-            nextBtn.addEventListener('click', showNextQuestion);
+    <!-- 测试页面 -->
+    <div id="test-page" class="hidden">
+        <!-- 进度条 -->
+        <div class="bg-white/70 rounded-full h-4 mb-6 overflow-hidden border border-secondary">
+            <div id="progress-bar" class="progress-bar bg-primary h-full w-0"></div>
+        </div>
+        <div class="flex justify-between text-sm text-gray-600 mb-8">
+            <span id="question-counter">问题 1/30</span>
+            <span id="progress-percentage">0%</span>
+        </div>
+        <!-- 问题卡片 -->
+        <div id="question-card" class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary min-h-[250px]">
+            <h2 id="question-text" class="text-xl font-semibold mb-6 text-primary"></h2>
+            <div id="answer-options" class="space-y-3"></div>
+        </div>
+        <!-- 导航按钮 -->
+        <div class="flex justify-between">
+            <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <<i class="fa fa-arrow-left mr-2"></</i> 上一题
+            </button>
+            <button id="next-btn" class="bg-primary hover:bg-primary/90 text-white py-2 px-6 rounded-lg font-semibold transition-all duration-300">
+                下一题 <<i class="fa fa-arrow-right ml-2"></</i>
+            </button>
+        </div>
+    </div>
+    <!-- 结果页面 -->
+    <div id="result-page" class="hidden">
+        <div class="bg-white/70 p-8 rounded-lg shadow-lg mb-8 border border-secondary">
+            <h2 class="text-2xl font-bold mb-4 text-primary text-center">你的民国人格为：</h2>
+            <div id="result-card" class="text-center mb-8">
+                <div class="inline-block bg-primary/10 p-6 rounded-full mb-4">
+                    <<i id="result-icon" class="fa fa-user text-5xl text-primary"></</i>
+                </div>
+                <h3 id="result-name" class="text-3xl font-bold mb-2"></h3>
+                <p id="result-title" class="text-xl text-gray-600 italic mb-6"></p>
+                <!-- 直接显示人物描述（原人格评价） -->
+                <div id="result-evaluation" class="text-left bg-primary/5 p-6 rounded-lg border border-secondary"></div>
+            </div>
+            <div class="mb-8">
+                <h4 class="text-lg font-semibold mb-3 text-primary">人物简介：</h4>
+                <p id="result-bio" class="leading-relaxed bg-white p-4 rounded-lg border border-secondary"></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-3 text-primary">匹配次数：</h4>
+                <p id="result-count" class="text-center text-lg"></p>
+            </div>
+        </div>
+        <div class="text-center">
+            <button id="restart-test" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
+                重新测试 <<i class="fa fa-refresh ml-2"></</i>
+            </button>
+            <div class="mt-8 p-4 bg-white/50 rounded-lg">
+                <p class="text-sm text-gray-600">
+                    <<i class="fa fa-info-circle mr-2"></</i>
+                    本测试仅供娱乐，结果基于心理学特质匹配算法生成
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <footer class="mt-16 text-center text-gray-600 text-sm">
+        <p>© 2025 民国人物人格测试 | 设计制作：豆包编程助手</p>
+        <p class="mt-2">本测试旨在弘扬民国文化，纪念历史人物</p>
+    </footer>
+</div>
+<script>
+    // 人物数据
+    const characters = [
+        {
+            id: 1,
+            name: "毛泽东",
+            title: "伟大的无产阶级革命家、战略家、理论家",
+            icon: "fa-user",
+            evaluation: "你具有远大的理想抱负和坚定的信念，善于从全局思考问题，有着非凡的战略眼光和领导才能。性格坚韧不拔，不畏艰难险阻，始终坚持自己的信仰和道路。同时，你也具有深厚的人民情怀，关注底层民众的疾苦。",
+            bio: "毛泽东（1893-1976），湖南湘潭人。中国共产党、中国人民解放军和中华人民共和国的主要缔造者和领导人。他对马克思列宁主义的发展、军事理论的贡献以及对共产党的理论贡献被称为毛泽东思想。",
+            traits: [5,5,4,3,5,4,5,3,5,4,3,5,4,5,3,5,4,3,5,4,3,5,4,5,3,5,4,3,5,4],
+            count: 0
+        },
+        {
+            id: 2,
+            name: "周恩来",
+            title: "人民的好总理",
+            icon: "fa-user-circle",
+            evaluation: "你性格温和而坚定，具有出色的协调能力和外交手腕。为人谦逊有礼，处事周到细致，总是把集体利益放在首位。你善于化解矛盾，维护团结，具有高尚的品格和无私的奉献精神。",
+            bio: "周恩来（1898-1976），江苏淮安人。伟大的无产阶级革命家、政治家、军事家、外交家，中国共产党和中华人民共和国的主要领导人之一，中国人民解放军主要创建人之一。",
+            traits: [4,4,5,5,4,5,3,5,4,5,4,4,5,4,5,4,3,5,4,5,4,4,5,4,5,4,3,5,4,5],
+            count: 0
+        },
+        {
+            id: 3,
+            name: "宋霭龄",
+            title: "民国时期的女实业家",
+            icon: "fa-female",
+            evaluation: "你具有敏锐的商业头脑和强烈的家族观念，务实而精明，善于把握机遇。性格果断，目标明确，重视实际利益和家族地位。你在人际关系中游刃有余，善于利用各种资源达到自己的目的。",
+            bio: "宋霭龄（1889-1973），广东文昌人。宋氏家族长女，孔祥熙之妻。她精明能干，善于理财，是民国时期最富有的女性之一，对宋氏家族的崛起起到了重要作用。",
+            traits: [3,5,4,4,2,3,4,2,3,5,2,3,5,2,4,3,5,2,3,5,2,3,5,2,4,3,5,2,3,5],
+            count: 0
+        },
+        {
+            id: 4,
+            name: "宋庆龄",
+            title: "国母、爱国主义、民主主义、国际主义和共产主义战士",
+            icon: "fa-heart",
+            evaluation: "你具有崇高的理想和坚定的信仰，为人正直无私，追求真理和正义。性格温和而坚定，既有女性的柔美，又有革命者的刚毅。你始终站在人民的立场上，为国家和民族的利益不懈奋斗。",
+            bio: "宋庆龄（1893-1981），广东文昌人。孙中山夫人，伟大的爱国主义、民主主义、国际主义和共产主义战士。她为中国人民的解放事业，为妇女儿童的卫生保健和文化教育福利事业做出了不可磨灭的贡献。",
+            traits: [5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3],
+            count: 0
+        },
+        {
+            id: 5,
+            name: "宋美龄",
+            title: "蒋介石夫人、杰出的外交家",
+            icon: "fa-star",
+            evaluation: "你优雅而聪慧，具有出色的社交能力和外交天赋。性格坚韧，善于应对复杂局面，有着强烈的自尊心和荣誉感。你注重形象和礼仪，同时也具备政治头脑和决策能力。",
+            bio: "宋美龄（1897-2003），广东文昌人。蒋介石夫人，杰出的政治家、外交家。她精通六国语言，在抗日战争时期的外交活动中发挥了重要作用，是中国近代史上极具影响力的女性。",
+            traits: [4,4,4,5,3,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4,3,5,4,4],
+            count: 0
+        },
+        {
+            id: 6,
+            name: "孙中山",
+            title: "中国民主革命的伟大先行者",
+            icon: "fa-flag",
+            evaluation: "你具有远大的理想和开阔的视野，是天生的领导者和革命者。性格乐观坚定，百折不挠，始终为理想而奋斗。你善于提出新思想、新理念，具有感召力和影响力。",
+            bio: "孙中山（1866-1925），广东香山人。中国近代民主革命的伟大先行者，中华民国和中国国民党的缔造者，三民主义的倡导者。他领导辛亥革命推翻了封建帝制，建立了中华民国。",
+            traits: [5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4],
+            count: 0
+        },
+        {
+            id: 7,
+            name: "蒋介石",
+            title: "中国国民党总裁、中华民国总统",
+            icon: "fa-building",
+            evaluation: "你具有强烈的权力欲和控制欲，性格果断坚决，注重纪律和秩序。你善于权谋和策略，有着坚定的目标和执行力。但有时过于固执己见，缺乏灵活性和包容性。",
+            bio: "蒋介石（1887-1975），浙江奉化人。中国国民党当政时期的党、政、军主要领导人。他领导北伐战争统一了中国，抗日战争时期担任中国战区最高统帅，后在内战中失败退居台湾。",
+            traits: [4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3,3,4,4,3],
+            count: 0
+        },
+        {
+            id: 8,
+            name: "袁世凯",
+            title: "北洋军阀领袖、中华民国大总统",
+            icon: "fa-balance-scale",
+            evaluation: "你具有强烈的政治野心和务实精神，善于把握时机，灵活变通。性格复杂多面，既有改革的一面，又有保守的一面。你注重实际利益，有时为达目的不择手段。",
+            bio: "袁世凯（1859-1916），河南项城人。中国近代史上著名的政治、军事人物，北洋军阀领袖。他曾任中华民国大总统，后复辟帝制，建立中华帝国，引发护国战争，不久后病逝。",
+            traits: [3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2,4,2,3,2],
+            count: 0
+        },
+        {
+            id: 9,
+            name: "李大钊",
+            title: "中国共产主义运动的先驱",
+            icon: "fa-bookmark",
+            evaluation: "你具有坚定的信仰和无私的奉献精神，是理想主义的践行者。性格热情而执着，勇于探索真理，敢于为理想献身。你具有强烈的社会责任感和历史使命感。",
+            bio: "李大钊（1889-1927），河北乐亭人。中国共产主义运动的先驱，伟大的马克思主义者，杰出的无产阶级革命家，中国共产党的主要创始人之一。他为中国革命作出了巨大贡献，最终英勇就义。",
+            traits: [5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5,4,5,5,5],
+            count: 0
+        },
+        {
+            id: 10,
+            name: "陈独秀",
+            title: "新文化运动倡导者、中国共产党创始人之一",
+            icon: "fa-pencil",
+            evaluation: "你思想激进，勇于创新，是新文化的倡导者和推动者。性格直率而固执，敢于挑战传统，追求思想解放。你具有强烈的批判精神，但有时缺乏妥协和合作的精神。",
+            bio: "陈独秀（1879-1942），安徽怀宁人。新文化运动的倡导者之一，中国共产党的创始人和早期主要领导人之一。他创办《新青年》杂志，提倡民主与科学，对中国近代思想解放产生了深远影响。",
+            traits: [4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4],
+            count: 0
+        },
+        {
+            id: 11,
+            name: "林徽因",
+            title: "中国著名建筑师、诗人",
+            icon: "fa-paint-brush",
+            evaluation: "你才华横溢，兼具理性与感性，既有艺术家的浪漫，又有科学家的严谨。性格优雅而独立，对美有着敏锐的感知力，同时对事业充满热情和执着。你善于在不同领域展现自己的才华。",
+            bio: "林徽因（1904-1955），福建闽侯人。中国著名建筑师、诗人、作家。她参与了国徽和人民英雄纪念碑的设计，是中国第一位女性建筑学家，同时在文学创作上也有很高成就。",
+            traits: [2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5],
+            count: 0
+        },
+        {
+            id: 12,
+            name: "徐志摩",
+            title: "新月派代表诗人",
+            icon: "fa-paper-plane",
+            evaluation: "你浪漫多情，富有想象力和创造力，追求自由和真爱。性格热情奔放，情感丰富，善于用诗意的眼光看待世界。你对美和爱有着执着的追求，敢于表达自己的情感。",
+            bio: "徐志摩（1897-1931），浙江海宁人。现代诗人、散文家，新月派代表诗人。他的诗歌风格清新飘逸，富有浪漫主义色彩，对中国新诗的发展做出了重要贡献。",
+            traits: [1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5,2,5,1,5],
+            count: 0
+        },
+        {
+            id: 13,
+            name: "梁启超",
+            title: "近代著名思想家、政治家、教育家",
+            icon: "fa-graduation-cap",
+            evaluation: "你博学多才，思想开明，具有强烈的社会责任感。性格温和而坚定，善于学习和适应变化，既有传统的底蕴，又有现代的视野。你注重教育和启蒙，希望通过思想改变社会。",
+            bio: "梁启超（1873-1929），广东新会人。中国近代著名的思想家、政治家、教育家、史学家、文学家。戊戌变法（百日维新）领袖之一，中国近代维新派、新法家代表人物。",
+            traits: [4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],
+            count: 0
+        },
+        {
+            id: 14,
+            name: "鲁迅",
+            title: "中国现代文学的奠基人",
+            icon: "fa-book",
+            evaluation: "你具有敏锐的洞察力和强烈的批判精神，敢于直面现实的黑暗。性格冷峻而深刻，善于用文字揭露社会的弊病，唤醒民众的觉悟。你有着强烈的正义感和社会责任感。",
+            bio: "鲁迅（1881-1936），浙江绍兴人。原名周树人，中国现代文学的奠基人，著名文学家、思想家、革命家。他的作品深刻揭示了中国社会的问题，对中国现代文学和思想产生了深远影响。",
+            traits: [5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3,5,2,5,3],
+            count: 0
+        },
+        {
+            id: 15,
+            name: "胡适",
+            title: "新文化运动领袖之一、学者",
+            icon: "fa-globe",
+            evaluation: "你思想开明，崇尚自由和民主，具有学者的理性和包容。性格温和而坚定，注重实证和逻辑，善于吸收外来文化，同时保持独立思考。你相信渐进的改良，反对激进的变革。",
+            bio: "胡适（1891-1962），安徽绩溪人。现代著名学者、诗人、历史学家、文学家、哲学家。新文化运动的领袖之一，提倡白话文，主张全盘西化，对中国现代学术和思想产生了重要影响。",
+            traits: [3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4],
+            count: 0
+        },
+        {
+            id: 16,
+            name: "蔡元培",
+            title: "近代著名教育家、北大校长",
+            icon: "fa-university",
+            evaluation: "你具有开阔的胸襟和包容的精神，是天生的教育家和领导者。性格温和而坚定，崇尚学术自由和思想解放，善于团结各方人才，创造和谐的环境。你注重培养人才，推动教育进步。",
+            bio: "蔡元培（1868-1940），浙江绍兴人。近代著名教育家、革命家、政治家。曾任北京大学校长，革新北大，开“学术”与“自由”之风，对中国现代教育制度的建立作出了重要贡献。",
+            traits: [3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5],
+            count: 0
+        },
+        {
+            id: 17,
+            name: "秋瑾",
+            title: "近代民主革命志士",
+            icon: "fa-fire",
+            evaluation: "你具有强烈的爱国情怀和革命精神，性格刚烈而勇敢，敢于为理想献身。你反对封建礼教，追求男女平等，是女性解放的先驱。你有着不屈不挠的意志和视死如归的勇气。",
+            bio: "秋瑾（1875-1907），浙江绍兴人。近代民主革命志士，中国女权和女学思想的倡导者。她积极投身反清革命，组织光复军起义，失败后英勇就义，是辛亥革命时期重要的革命烈士。",
+            traits: [5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2],
+            count: 0
+        },
+        {
+            id: 18,
+            name: "邓小平",
+            title: "中国改革开放的总设计师",
+            icon: "fa-cogs",
+            evaluation: "你具有务实的精神和改革的勇气，性格坚韧而果断，善于把握时机，推动变革。你注重实际效果，反对空谈理论，有着“不管黑猫白猫，抓住老鼠就是好猫”的实用主义哲学。",
+            bio: "邓小平（1904-1997），四川广安人。中国社会主义改革开放和现代化建设的总设计师，邓小平理论的主要创立者。他推动了中国的改革开放，使中国发生了翻天覆地的变化。",
+            traits: [4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5],
+            count: 0
+        },
+        {
+            id: 19,
+            name: "汪精卫",
+            title: "中国国民党副总裁、汉奸",
+            icon: "fa-ban",
+            evaluation: "你具有复杂的性格，早期充满理想和热情，但在关键时刻容易动摇和妥协。你善于言辞和表达，但缺乏坚定的立场和原则。在压力和诱惑面前，你可能会做出错误的选择。",
+            bio: "汪精卫（1883-1944），广东三水人。早年参加革命，是孙中山的追随者，后成为中国国民党副总裁。抗日战争期间投靠日本，成立伪国民政府，沦为汉奸，备受后人唾弃。",
+            traits: [2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3],
+            count: 0
+        },
+        {
+            id: 20,
+            name: "刘少奇",
+            title: "伟大的马克思主义者、无产阶级革命家",
+            icon: "fa-users",
+            evaluation: "你具有严谨的思维和务实的作风，注重理论与实践的结合。性格沉稳而坚定，善于思考和总结经验，有着强烈的责任感和使命感。你关心群众利益，坚持实事求是。",
+            bio: "刘少奇（1898-1969），湖南宁乡人。伟大的马克思主义者，伟大的无产阶级革命家、政治家、理论家，党和国家主要领导人之一。他为中国革命和建设作出了重要贡献。",
+            traits: [4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4],
+            count: 0
+        },
+        {
+            id: 21,
+            name: "朱德",
+            title: "中国人民解放军总司令",
+            icon: "fa-shield",
+            evaluation: "你具有宽厚的胸怀和坚定的意志，性格温和而刚毅，是天生的军事家和领导者。你善于团结同志，有着卓越的军事才能和战略眼光，同时保持着朴素的作风。",
+            bio: "朱德（1886-1976），四川仪陇人。伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家，中国人民解放军的主要缔造者之一，中华人民共和国的开国元勋。",
+            traits: [5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4,4,4,5,4],
+            count: 0
+        },
+        {
+            id: 22,
+            name: "张作霖",
+            title: "北洋军阀奉系首领",
+            icon: "fa-star-o",
+            evaluation: "你具有草莽英雄的气质，性格豪爽而果断，善于把握机遇，从底层崛起。你注重实际利益，有着强烈的地方观念和家族观念。在复杂的政治环境中，你能够灵活应变，保护自己的利益。",
+            bio: "张作霖（1875-1928），辽宁海城人。北洋军阀奉系首领，号称“东北王”。他从土匪起家，逐步控制东北地区，成为北洋政府最后一位国家元首，后被日本关东军炸死。",
+            traits: [3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2],
+            count: 0
+        },
+        {
+            id: 23,
+            name: "沈从文",
+            title: "现代著名作家、历史文物研究家",
+            icon: "fa-tree",
+            evaluation: "你具有独特的审美眼光和乡土情怀，性格温和而内敛，善于用细腻的笔触描绘生活。你热爱自然和乡土，对人性有着深刻的理解和同情。你追求纯粹的艺术，保持着独立的人格。",
+            bio: "沈从文（1902-1988），湖南凤凰人。现代著名作家、历史文物研究家。他的作品充满了乡土气息和人性关怀，代表作《边城》展现了湘西的自然风光和淳朴的人性美。",
+            traits: [2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5],
+            count: 0
+        },
+        {
+            id: 24,
+            name: "钱钟书",
+            title: "现代著名作家、文学研究家",
+            icon: "fa-book",
+            evaluation: "你博学多才，聪慧过人，具有敏锐的洞察力和幽默感。性格孤傲而清高，不屑于世俗的名利，专注于学术研究和文学创作。你善于用智慧和学识表达对人生的思考。",
+            bio: "钱钟书（1910-1998），江苏无锡人。现代著名作家、文学研究家。他的著作《围城》是中国现代文学的经典之作，学术著作《管锥编》展现了他渊博的学识。",
+            traits: [1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4],
+            count: 0
+        },
+        {
+            id: 25,
+            name: "陶行知",
+            title: "近代著名教育家",
+            icon: "fa-pencil-square-o",
+            evaluation: "你具有崇高的教育理想和奉献精神，性格朴实而坚定，注重实践和创新。你相信教育可以改变社会，致力于普及教育，让更多的人获得知识和改变命运的机会。",
+            bio: "陶行知（1891-1946），安徽歙县人。近代著名教育家、思想家。他提出了“生活即教育”、“社会即学校”、“教学做合一”等教育理念，致力于平民教育和乡村教育。",
+            traits: [3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5,4,5,3,5],
+            count: 0
+        },
+        {
+            id: 26,
+            name: "陈延年",
+            title: "无产阶级革命家",
+            icon: "fa-heartbeat",
+            evaluation: "你具有坚定的革命信仰和不屈的意志，性格刚毅而勇敢，为了理想不惜牺牲一切。你年轻有为，充满激情和活力，敢于斗争，不怕牺牲，是革命的中坚力量。",
+            bio: "陈延年（1898-1927），安徽怀宁人。陈独秀长子，杰出的无产阶级革命家，曾任中共江苏省委书记。他在革命斗争中表现出坚定的信念和英勇的气概，最终英勇就义。",
+            traits: [5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3,5,3],
+            count: 0
+        },
+        {
+            id: 27,
+            name: "林觉民",
+            title: "黄花岗七十二烈士之一",
+            icon: "fa-key",
+            evaluation: "你具有浪漫的理想主义和英勇的牺牲精神，性格热情而执着，为了国家和民族的利益不惜献出生命。你既有文人的柔情，又有革命者的刚毅，是铁骨柔情的典范。",
+            bio: "林觉民（1887-1911），福建闽侯人。黄花岗七十二烈士之一，参加广州起义，失败后被俘牺牲。他的《与妻书》感人至深，展现了革命者的家国情怀和儿女情长。",
+            traits: [5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4],
+            count: 0
+        },
+        {
+            id: 28,
+            name: "张爱玲",
+            title: "现代著名女作家",
+            icon: "fa-diamond",
+            evaluation: "你具有敏锐的观察力和独特的文学才华，性格孤傲而敏感，善于洞察人性的复杂和世态的炎凉。你对生活有着独特的理解，用细腻的笔触描绘都市男女的情感世界。",
+            bio: "张爱玲（1920-1995），上海人。现代著名女作家，她的作品风格独特，善于描绘都市生活和人性的复杂，代表作有《金锁记》、《倾城之恋》等。",
+            traits: [2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4,1,5,2,4],
+            count: 0
+        },
+        {
+            id: 29,
+            name: "邓颖超",
+            title: "无产阶级革命家、妇女运动先驱",
+            icon: "fa-female",
+            evaluation: "你具有坚定的革命信念和无私的奉献精神，性格温和而坚定，是妇女解放运动的先驱。你注重实际工作，关心群众利益，有着高尚的品格和宽广的胸怀。",
+            bio: "邓颖超（1904-1992），河南光山人。周恩来夫人，伟大的无产阶级革命家、政治家，著名社会活动家，中国妇女运动的先驱。她为中国革命和建设事业作出了重要贡献。",
+            traits: [4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5],
+            count: 0
+        },
+        {
+            id: 30,
+            name: "梁思成",
+            title: "中国著名建筑学家",
+            icon: "fa-building-o",
+            evaluation: "你具有严谨的科学精神和深厚的文化底蕴，性格稳重而执着，对专业有着极高的追求。你注重保护文化遗产，致力于将传统与现代相结合，推动学科的发展。",
+            bio: "梁思成（1901-1972），广东新会人。梁启超长子，中国著名建筑学家，建筑教育家。他是中国近代建筑教育的奠基人之一，致力于古建筑的保护和研究。",
+            traits: [3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4,3,4],
+            count: 0
+        },
+        {
+            id: 31,
+            name: "杨绛",
+            title: "著名作家、翻译家",
+            icon: "fa-book",
+            evaluation: "你具有优雅的气质和深厚的学识，性格温婉而坚韧，在逆境中保持着乐观和从容。你注重精神生活，追求内心的平静和充实，用智慧和才华书写人生。",
+            bio: "杨绛（1911-2016），江苏无锡人。钱钟书夫人，著名作家、文学翻译家和外国文学研究家。她的作品朴实真挚，充满智慧和温情，代表作有《我们仨》、《洗澡》等。",
+            traits: [2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5,2,5],
+            count: 0
+        },
+        {
+            id: 32,
+            name: "冰心",
+            title: "著名作家、诗人",
+            icon: "fa-snowflake-o",
+            evaluation: "你具有温柔的性格和博爱的精神，善于用细腻的笔触表达对母爱、童真和自然的赞美。你相信爱的力量，用文学作品传递温暖和希望，影响了一代又一代的读者。",
+            bio: "冰心（1900-1999），福建长乐人。原名谢婉莹，现代著名作家、诗人、翻译家、儿童文学家。她的作品充满了爱与美，代表作有《繁星》、《春水》、《寄小读者》等。",
+            traits: [1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5],
+            count: 0
         }
-        
-        // 开始测试
-        function startTest() {
-            introPage.classList.add('hidden');
-            testPage.classList.remove('hidden');
-            currentQuestion = 0;
-            answers = new Array(questions.length).fill(0);
+    ];
+    // 问题数据（优化选项表述，避免交叉）
+    const questions = [
+        {
+            id: 1,
+            text: "面对困境，你更倾向于：",
+            options: [
+                { text: "坚定目标，持续攻坚直至突破", value: 5 },
+                { text: "灵活变通，寻找新的解决方案", value: 4 },
+                { text: "稳扎稳打，按计划逐步推进", value: 3 },
+                { text: "顺其自然，等待合适时机", value: 2 },
+                { text: "主动求助，联合他人共同解决", value: 1 }
+            ]
+        },
+        {
+            id: 2,
+            text: "你的人生追求更接近：",
+            options: [
+                { text: "投身伟大事业，推动社会变革", value: 5 },
+                { text: "创造卓越成就，留下时代印记", value: 4 },
+                { text: "深耕知识领域，实现自我提升", value: 3 },
+                { text: "专注兴趣热爱，自由表达自我", value: 2 },
+                { text: "守护安稳生活，享受平淡幸福", value: 1 }
+            ]
+        },
+        {
+            id: 3,
+            text: "在团队中，你通常扮演的角色是：",
+            options: [
+                { text: "决策者，引领方向并统筹全局", value: 5 },
+                { text: "执行者，高效落实既定计划", value: 4 },
+                { text: "智囊者，提供创新思路和方案", value: 3 },
+                { text: "协调者，促进沟通并化解矛盾", value: 2 },
+                { text: "支持者，默默付出并做好本职", value: 1 }
+            ]
+        },
+        {
+            id: 4,
+            text: "对于传统规则与创新做法，你的态度是：",
+            options: [
+                { text: "勇于突破，优先采用创新方案", value: 5 },
+                { text: "择善而从，保留精华并优化升级", value: 4 },
+                { text: "尊重传统，在原有基础上适度创新", value: 3 },
+                { text: "谨慎保守，倾向沿用成熟规则", value: 2 },
+                { text: "坚守传统，认为老规矩不可动摇", value: 1 }
+            ]
+        },
+        {
+            id: 5,
+            text: "做重要决策时，你更依赖：",
+            options: [
+                { text: "直觉判断，快速做出选择", value: 5 },
+                { text: "理性分析，权衡利弊后决策", value: 4 },
+                { text: "过往经验，遵循成功惯例", value: 3 },
+                { text: "他人建议，综合多方意见", value: 2 },
+                { text: "反复斟酌，避免出现失误", value: 1 }
+            ]
+        },
+        {
+            id: 6,
+            text: "你对爱情的态度是：",
+            options: [
+                { text: "勇敢追爱，不计较世俗眼光", value: 5 },
+                { text: "真诚相待，用心呵护感情", value: 4 },
+                { text: "慎重选择，注重三观契合", value: 3 },
+                { text: "随缘随性，不刻意强求", value: 2 },
+                { text: "事业为先，爱情顺其自然", value: 1 }
+            ]
+        },
+        {
+            id: 7,
+            text: "面对权威人士的观点，你会：",
+            options: [
+                { text: "坚持真理，敢于直言不同意见", value: 5 },
+                { text: "尊重权威，但保持独立思考", value: 4 },
+                { text: "委婉表达，避免直接冲突", value: 3 },
+                { text: "表面认同，内心保留看法", value: 2 },
+                { text: "完全服从，按权威指示行事", value: 1 }
+            ]
+        },
+        {
+            id: 8,
+            text: "你的性格特质更偏向：",
+            options: [
+                { text: "外向开朗，热衷社交互动", value: 5 },
+                { text: "积极主动，充满行动力", value: 4 },
+                { text: "沉着冷静，善于深思熟虑", value: 3 },
+                { text: "温和友善，乐于帮助他人", value: 2 },
+                { text: "内向沉静，偏好独处时光", value: 1 }
+            ]
+        },
+        {
+            id: 9,
+            text: "遭遇失败后，你的反应是：",
+            options: [
+                { text: "复盘总结，立刻重新出发", value: 5 },
+                { text: "分析原因，调整策略再尝试", value: 4 },
+                { text: "稍作休整，恢复信心后继续", value: 3 },
+                { text: "寻求支持，向他人倾诉求助", value: 2 },
+                { text: "自我反思，长期沉淀后再行动", value: 1 }
+            ]
+        },
+        {
+            id: 10,
+            text: "以下哪项是你最看重的价值：",
+            options: [
+                { text: "家国责任，为社会发展做贡献", value: 5 },
+                { text: "理想信仰，坚持内心追求", value: 4 },
+                { text: "人情道义，维护亲友关系", value: 3 },
+                { text: "自我成长，不断完善提升", value: 2 },
+                { text: "生活品质，追求舒适愉悦", value: 1 }
+            ]
+        },
+        {
+            id: 11,
+            text: "学习或工作中，你最在意的是：",
+            options: [
+                { text: "创新突破，打造独特价值", value: 5 },
+                { text: "效率优先，快速达成目标", value: 4 },
+                { text: "品质至上，力求尽善尽美", value: 3 },
+                { text: "团队和谐，注重合作氛围", value: 2 },
+                { text: "平稳无错，按流程完成任务", value: 1 }
+            ]
+        },
+        {
+            id: 12,
+            text: "对于本土文化与外国文化，你认为：",
+            options: [
+                { text: "外国文化更先进，应积极学习", value: 5 },
+                { text: "各有优劣，主张相互借鉴融合", value: 4 },
+                { text: "以本土文化为核心，适度吸收外国精华", value: 3 },
+                { text: "逐步接纳，不急于全盘吸收", value: 2 },
+                { text: "本土文化更优越，无需借鉴外国", value: 1 }
+            ]
+        },
+        {
+            id: 13,
+            text: "你的沟通风格更倾向于：",
+            options: [
+                { text: "直截了当，一针见血表达观点", value: 5 },
+                { text: "条理清晰，注重逻辑论证", value: 4 },
+                { text: "委婉含蓄，照顾他人感受", value: 3 },
+                { text: "生动风趣，善于调动氛围", value: 2 },
+                { text: "简洁明了，点到为止不赘述", value: 1 }
+            ]
+        },
+        {
+            id: 14,
+            text: "你理想的生活状态是：",
+            options: [
+                { text: "充满挑战，体验多元人生", value: 5 },
+                { text: "积极向上，持续突破自我", value: 4 },
+                { text: "安稳有序，保持规律节奏", value: 3 },
+                { text: "温馨和睦，充满人情关怀", value: 2 },
+                { text: "简单纯粹，回归自然本真", value: 1 }
+            ]
+        },
+        {
+            id: 15,
+            text: "面对社会公共事务，你会：",
+            options: [
+                { text: "主动参与，积极发声并付诸行动", value: 5 },
+                { text: "尽力而为，在能力范围内提供帮助", value: 4 },
+                { text: "做好本职，顺带关注并支持", value: 3 },
+                { text: "保持关注，偶尔参与相关活动", value: 2 },
+                { text: "专注自我，不参与无关事务", value: 1 }
+            ]
+        },
+        {
+            id: 16,
+            text: "你的思考方式更偏向：",
+            options: [
+                { text: "宏观视角，聚焦核心与趋势", value: 5 },
+                { text: "逻辑推理，注重理性分析", value: 4 },
+                { text: "细节导向，关注实际可行性", value: 3 },
+                { text: "感性直觉，依赖内心感受", value: 2 },
+                { text: "全面考量，兼顾各方因素", value: 1 }
+            ]
+        },
+        {
+            id: 17,
+            text: "当环境发生重大变化时，你会：",
+            options: [
+                { text: "主动引领，推动变革进程", value: 5 },
+                { text: "积极适应，快速融入新环境", value: 4 },
+                { text: "观望等待，择机调整自身", value: 3 },
+                { text: "被动接受，逐步适应变化", value: 2 },
+                { text: "抗拒改变，坚守原有状态", value: 1 }
+            ]
+        },
+        {
+            id: 18,
+            text: "你交朋友的原则是：",
+            options: [
+                { text: "广结善缘，积累多元人脉", value: 5 },
+                { text: "真诚相待，重视情义与信任", value: 4 },
+                { text: "宁缺毋滥，追求灵魂契合", value: 3 },
+                { text: "友善待人，乐于助人不求回报", value: 2 },
+                { text: "保持距离，尊重彼此隐私空间", value: 1 }
+            ]
+        },
+        {
+            id: 19,
+            text: "当理想与现实产生冲突时，你会：",
+            options: [
+                { text: "坚守理想，不惜对抗现实", value: 5 },
+                { text: "平衡兼顾，坚持理想并适配现实", value: 4 },
+                { text: "务实为先，先解决现实再追理想", value: 3 },
+                { text: "适度妥协，接受现实并调整理想", value: 2 },
+                { text: "放弃理想，完全向现实妥协", value: 1 }
+            ]
+        },
+        {
+            id: 20,
+            text: "你管理时间的方式更接近：",
+            options: [
+                { text: "目标导向，高效利用每一刻", value: 5 },
+                { text: "计划先行，严格按照日程执行", value: 4 },
+                { text: "灵活调整，根据情况优化安排", value: 3 },
+                { text: "随性而为，享受过程不赶进度", value: 2 },
+                { text: "从容不迫，按部就班不慌不忙", value: 1 }
+            ]
+        },
+        {
+            id: 21,
+            text: "面对他人的批评，你会：",
+            options: [
+                { text: "坦然接纳，积极改进自身", value: 5 },
+                { text: "理性看待，采纳合理建议", value: 4 },
+                { text: "冷静反思，客观审视自身", value: 3 },
+                { text: "感到委屈，适当解释情况", value: 2 },
+                { text: "难以接受，当场反驳辩解", value: 1 }
+            ]
+        },
+        {
+            id: 22,
+            text: "你的兴趣爱好更偏向以下哪类：",
+            options: [
+                { text: "时政热点，关注国家与社会发展", value: 5 },
+                { text: "科技创新，探索前沿新鲜事物", value: 4 },
+                { text: "文学艺术，提升审美与内涵", value: 3 },
+                { text: "户外运动，锻炼身体释放压力", value: 2 },
+                { text: "居家生活，享受手工、烹饪等乐趣", value: 1 }
+            ]
+        },
+        {
+            id: 23,
+            text: "面临巨大压力时，你会：",
+            options: [
+                { text: "愈挫愈勇，将压力转化为动力", value: 5 },
+                { text: "沉着应对，保持稳定发挥", value: 4 },
+                { text: "略有紧张，但能坚持完成任务", value: 3 },
+                { text: "寻求支持，与他人分担压力", value: 2 },
+                { text: "压力过载，影响正常表现", value: 1 }
+            ]
+        },
+        {
+            id: 24,
+            text: "若担任领导职务，你的管理风格是：",
+            options: [
+                { text: "果断决策，主导团队方向", value: 5 },
+                { text: "民主协商，汇集团队智慧", value: 4 },
+                { text: "以身作则，带头示范引领", value: 3 },
+                { text: "温和包容，凝聚团队力量", value: 2 },
+                { text: "充分授权，信任下属能力", value: 1 }
+            ]
+        },
+        {
+            id: 25,
+            text: "你对生死的看法是：",
+            options: [
+                { text: "生命价值在于意义，可为之牺牲", value: 5 },
+                { text: "珍惜生命，努力活出精彩", value: 4 },
+                { text: "生死有命，顺应自然规律", value: 3 },
+                { text: "敬畏生命，专注活在当下", value: 2 },
+                { text: "畏惧死亡，力求平安长寿", value: 1 }
+            ]
+        },
+        {
+            id: 26,
+            text: "你的学习方式更倾向于：",
+            options: [
+                { text: "广泛涉猎，积累多元知识", value: 5 },
+                { text: "深度钻研，精通专业领域", value: 4 },
+                { text: "学以致用，注重实践应用", value: 3 },
+                { text: "兴趣驱动，专注热爱领域", value: 2 },
+                { text: "循序渐进，夯实基础功底", value: 1 }
+            ]
+        },
+        {
+            id: 27,
+            text: "你对金钱与权力的态度是：",
+            options: [
+                { text: "追求权力，以此实现远大抱负", value: 5 },
+                { text: "积累财富，用于回馈社会", value: 4 },
+                { text: "够用即可，平衡物质与生活", value: 3 },
+                { text: "看淡名利，追求精神自由", value: 2 },
+                { text: "知足常乐，重视精神富足", value: 1 }
+            ]
+        },
+        {
+            id: 28,
+            text: "解决复杂问题时，你会：",
+            options: [
+                { text: "大胆尝试，探索创新解决方案", value: 5 },
+                { text: "深挖根源，彻底解决问题", value: 4 },
+                { text: "借鉴经验，采用稳妥方法", value: 3 },
+                { text: "团队协作，集合众人之力", value: 2 },
+                { text: "耐心等待，时机成熟再行动", value: 1 }
+            ]
+        },
+        {
+            id: 29,
+            text: "对于传统文化，你会：",
+            options: [
+                { text: "批判继承，推陈出新促发展", value: 5 },
+                { text: "保护传承，努力发扬光大", value: 4 },
+                { text: "深入研究，领悟核心精髓", value: 3 },
+                { text: "欣赏体验，偶尔参与相关活动", value: 2 },
+                { text: "顺其自然，不刻意关注", value: 1 }
+            ]
+        },
+        {
+            id: 30,
+            text: "你的人生态度更接近：",
+            options: [
+                { text: "知行合一，注重实践与行动", value: 5 },
+                { text: "中庸之道，追求平衡与和谐", value: 4 },
+                { text: "实事求是，遵循客观规律", value: 3 },
+                { text: "顺其自然，不强求不执着", value: 2 },
+                { text: "活在当下，珍惜眼前时光", value: 1 }
+            ]
+        }
+    ];
+    // 全局变量
+    let currentQuestion = 0;
+    let answers = [];
+    let resultCharacter = null;
+    let maxScore = 0;
+    // DOM元素
+    const introPage = document.getElementById('intro-page');
+    const testPage = document.getElementById('test-page');
+    const resultPage = document.getElementById('result-page');
+    const startTestBtn = document.getElementById('start-test');
+    const restartTestBtn = document.getElementById('restart-test');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const questionText = document.getElementById('question-text');
+    const answerOptions = document.getElementById('answer-options');
+    const questionCounter = document.getElementById('question-counter');
+    const progressPercentage = document.getElementById('progress-percentage');
+    const progressBar = document.getElementById('progress-bar');
+    // 初始化
+    function init() {
+        // 加载本地存储的人物计数
+        const savedCounts = localStorage.getItem('characterCounts');
+        if (savedCounts) {
+            const counts = JSON.parse(savedCounts);
+            characters.forEach(char => {
+                if (counts[char.id]) {
+                    char.count = counts[char.id];
+                }
+            });
+        }
+        // 绑定事件
+        startTestBtn.addEventListener('click', startTest);
+        restartTestBtn.addEventListener('click', restartTest);
+        prevBtn.addEventListener('click', showPrevQuestion);
+        nextBtn.addEventListener('click', showNextQuestion);
+    }
+    // 开始测试
+    function startTest() {
+        introPage.classList.add('hidden');
+        testPage.classList.remove('hidden');
+        currentQuestion = 0;
+        answers = new Array(questions.length).fill(0);
+        showQuestion(currentQuestion);
+        updateProgress();
+    }
+    // 重新测试
+    function restartTest() {
+        resultPage.classList.add('hidden');
+        introPage.classList.remove('hidden');
+        currentQuestion = 0;
+        answers = [];
+        resultCharacter = null;
+    }
+    // 显示问题
+    function showQuestion(index) {
+        const question = questions[index];
+        questionText.textContent = question.text;
+        answerOptions.innerHTML = '';
+        question.options.forEach((option, optIndex) => {
+            const optionElement = document.createElement('div');
+            optionElement.className = 'flex items-center';
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = 'answer';
+            radio.id = `option-${optIndex}`;
+            radio.value = option.value;
+            radio.className = 'mr-3';
+            if (answers[index] == option.value) {
+                radio.checked = true;
+            }
+            radio.addEventListener('change', () => {
+                answers[index] = parseInt(option.value);
+            });
+            const label = document.createElement('label');
+            label.htmlFor = `option-${optIndex}`;
+            label.className = 'flex-1 p-3 border border-gray-300 rounded-lg hover:bg-primary/5 cursor-pointer';
+            label.textContent = option.text;
+            optionElement.appendChild(radio);
+            optionElement.appendChild(label);
+            answerOptions.appendChild(optionElement);
+        });
+        // 更新按钮状态
+        prevBtn.disabled = index === 0;
+        nextBtn.textContent = index === questions.length - 1 ? '查看结果' : '下一题';
+        // 更新计数器
+        questionCounter.textContent = `问题 ${index + 1}/${questions.length}`;
+    }
+    // 上一题
+    function showPrevQuestion() {
+        if (currentQuestion > 0) {
+            currentQuestion--;
             showQuestion(currentQuestion);
             updateProgress();
         }
-        
-        // 重新测试
-        function restartTest() {
-            resultPage.classList.add('hidden');
-            introPage.classList.remove('hidden');
-            currentQuestion = 0;
-            answers = [];
-            resultCharacter = null;
+    }
+    // 下一题
+    function showNextQuestion() {
+        // 检查是否选择了答案
+        if (answers[currentQuestion] === 0 && currentQuestion < questions.length - 1) {
+            alert('请选择一个答案！');
+            return;
         }
-        
-        // 显示问题
-        function showQuestion(index) {
-            const question = questions[index];
-            questionText.textContent = question.text;
-            answerOptions.innerHTML = '';
-            
-            question.options.forEach((option, optIndex) => {
-                const optionElement = document.createElement('div');
-                optionElement.className = 'flex items-center';
-                
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = 'answer';
-                radio.id = `option-${optIndex}`;
-                radio.value = option.value;
-                radio.className = 'mr-3';
-                
-                if (answers[index] == option.value) {
-                    radio.checked = true;
-                }
-                
-                radio.addEventListener('change', () => {
-                    answers[index] = parseInt(option.value);
-                });
-                
-                const label = document.createElement('label');
-                label.htmlFor = `option-${optIndex}`;
-                label.className = 'flex-1 p-3 border border-gray-300 rounded-lg hover:bg-primary/5 cursor-pointer';
-                label.textContent = option.text;
-                
-                optionElement.appendChild(radio);
-                optionElement.appendChild(label);
-                answerOptions.appendChild(optionElement);
-            });
-            
-            // 更新按钮状态
-            prevBtn.disabled = index === 0;
-            nextBtn.textContent = index === questions.length - 1 ? '查看结果' : '下一题';
-            
-            // 更新计数器
-            questionCounter.textContent = `问题 ${index + 1}/${questions.length}`;
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+            updateProgress();
+        } else {
+            calculateResult();
+            showResult();
         }
-        
-        // 上一题
-        function showPrevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                showQuestion(currentQuestion);
-                updateProgress();
+    }
+    // 更新进度
+    function updateProgress() {
+        const percent = ((currentQuestion + 1) / questions.length) * 100;
+        progressBar.style.width = `${percent}%`;
+        progressPercentage.textContent = `${Math.round(percent)}%`;
+    }
+    // 计算结果
+    function calculateResult() {
+        let minScore = Infinity;
+        let bestMatch = null;
+        characters.forEach(char => {
+            let score = 0;
+            for (let i = 0; i < answers.length; i++) {
+                // 计算相似度得分（差值越小越匹配）
+                score += Math.abs(answers[i] - char.traits[i]);
             }
-        }
-        
-        // 下一题
-        function showNextQuestion() {
-            // 检查是否选择了答案
-            if (answers[currentQuestion] === 0 && currentQuestion < questions.length - 1) {
-                alert('请选择一个答案！');
-                return;
+            // 找到得分最小的（最匹配的）
+            if (score < minScore) {
+                minScore = score;
+                bestMatch = char;
             }
-            
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                showQuestion(currentQuestion);
-                updateProgress();
-            } else {
-                calculateResult();
-                showResult();
-            }
-        }
-        
-        // 更新进度
-        function updateProgress() {
-            const percent = ((currentQuestion + 1) / questions.length) * 100;
-            progressBar.style.width = `${percent}%`;
-            progressPercentage.textContent = `${Math.round(percent)}%`;
-        }
-        
-        // 计算结果
-        function calculateResult() {
-            let minScore = Infinity;
-            let bestMatch = null;
-            
-            characters.forEach(char => {
-                let score = 0;
-                for (let i = 0; i < answers.length; i++) {
-                    // 计算相似度得分（差值越小越匹配）
-                    score += Math.abs(answers[i] - char.traits[i]);
-                }
-                
-                // 找到得分最小的（最匹配的）
-                if (score < minScore) {
-                    minScore = score;
-                    bestMatch = char;
-                }
-            });
-            
-            resultCharacter = bestMatch;
-            maxScore = minScore;
-            
-            // 更新计数
-            resultCharacter.count++;
-            
-            // 保存计数到本地存储
-            const counts = {};
-            characters.forEach(char => {
-                counts[char.id] = char.count;
-            });
-            localStorage.setItem('characterCounts', JSON.stringify(counts));
-        }
-        
-        // 显示结果
-        function showResult() {
-            testPage.classList.add('hidden');
-            resultPage.classList.remove('hidden');
-            
-            document.getElementById('result-name').textContent = resultCharacter.name;
-            document.getElementById('result-title').textContent = resultCharacter.title;
-            document.getElementById('result-icon').className = `fa ${resultCharacter.icon} text-5xl text-primary`;
-            document.getElementById('result-evaluation').textContent = resultCharacter.evaluation;
-            document.getElementById('result-bio').textContent = resultCharacter.bio;
-            document.getElementById('result-count').textContent = `本测试中已有 ${resultCharacter.count} 人匹配到${resultCharacter.name}`;
-            
-            // 计算匹配度百分比
-            const matchPercentage = Math.max(60, 100 - (maxScore / questions.length) * 10);
-            document.getElementById('match-percentage-bar').style.width = `${matchPercentage}%`;
-            document.getElementById('match-percentage-text').textContent = `${Math.round(matchPercentage)}%`;
-        }
-        
-        // 页面加载完成后初始化
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
+        });
+        resultCharacter = bestMatch;
+        maxScore = minScore;
+        // 更新计数
+        resultCharacter.count++;
+        // 保存计数到本地存储
+        const counts = {};
+        characters.forEach(char => {
+            counts[char.id] = char.count;
+        });
+        localStorage.setItem('characterCounts', JSON.stringify(counts));
+    }
+    // 显示结果
+    function showResult() {
+        testPage.classList.add('hidden');
+        resultPage.classList.remove('hidden');
+        document.getElementById('result-name').textContent = resultCharacter.name;
+        document.getElementById('result-title').textContent = resultCharacter.title;
+        document.getElementById('result-icon').className = `fa ${resultCharacter.icon} text-5xl text-primary`;
+        document.getElementById('result-evaluation').textContent = resultCharacter.evaluation;
+        document.getElementById('result-bio').textContent = resultCharacter.bio;
+        document.getElementById('result-count').textContent = `本测试中已有 ${resultCharacter.count} 人匹配到${resultCharacter.name}`;
+    }
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', init);
+</script>
 </body>
 </html>
